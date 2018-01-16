@@ -148,5 +148,5 @@ echo ""
 echo "OpenSSH	: 444"
 echo "Dropbear: 80 / 443"
 echo "Squid	: 3128 / 8080"
-echo "webmin	: https://$ip:10000
+echo "webmin	: https://$ip:10000"
 echo "-----------------------------"
