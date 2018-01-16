@@ -1,3 +1,4 @@
+clear
 echo "Auto installer SSH,SSL,Squid,OpenVPN,UDPGW di ubuntu"
 echo "Tunggu proses instalasi selesai"
 sleep 5
@@ -131,9 +132,9 @@ echo "---------- Informasi --------"
 echo ""
 echo "Installer Stunnel4 Berhasil"
 echo ""
-echo "OpenSSH	      : 22"
+echo "OpenSSH	        : 22"
 echo "OpenSSH + SSL   : 22"
-echo "Dropbear      : 80 / 143"
+echo "Dropbear        : 80 / 143"
 echo "Dropbear + SSL  : 443"
 echo "Squid	        : 3128"
 echo "Squid	+ SSL   : 3128"
