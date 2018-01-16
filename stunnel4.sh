@@ -9,7 +9,6 @@ apt-get -y install wget curl
 apt-get -y install nano
 
 #membuat banner
-rm -rf /etc/issue.net
 cat > /etc/issue.net <<-END
 FREE PREMIUM SSH
 PROVIDED BY GLOBALSSH[.]NET
@@ -43,8 +42,7 @@ service dropbear restart
 
 #instalasi squid3
 apt-get install squid3 -y
-cp -rf /etc/squid3/squid.conf /etc/squid3/squid.conf.bak
-rm -rf /etc/squid3/squid.conf
+mv /etc/squid3/squid.conf /etc/squid3/squid.conf.bak
 ip=$(ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/&&!/127.0.0.2/{split($2,_," ");print _[1]}')
 cat > /etc/squid3/squid.conf <<-END
 acl SSL_ports port 443
@@ -79,7 +77,7 @@ END
 service squid3 restart
 
 #install webmin
-cat > /etc/apt/sources.list <<-END
+cat >> /etc/apt/sources.list <<-END
 deb http://download.webmin.com/download/repository sarge contrib
 deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
 END
