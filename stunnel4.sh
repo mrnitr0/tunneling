@@ -33,6 +33,7 @@ END
 #set banner openssh
 sed -i 's/#Banner/Banner/g /etc/ssh/sshd_config
 
+#install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
