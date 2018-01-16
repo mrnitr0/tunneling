@@ -92,7 +92,7 @@ END
 
 wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
 apt-get update
-apt-get install webmin
+apt-get -y install webmin
 
 #informasi SSL
 country=ID
