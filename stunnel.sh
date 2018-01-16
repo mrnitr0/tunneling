@@ -5,7 +5,6 @@
 #               for Debian / ubuntu                           #
 # Version:      1.0                                           #
 #=============================================================#
-
 if [[ "$USER" != 'root' ]]; then
 	echo "Maaf, Silahkan login menggunakan root"
 	exit
@@ -26,60 +25,6 @@ echo "-------------------- Stunnel Installer untuk debian dan ubuntu -----------
 echo ""
 echo "Mohon tunggu sebentar.. sedang memeriksa port yang berjalan"
 sleep 2
-openssh=444
-dropbear1=80
-dropbear2=443
-squid1=3128
-squid2=8080
-if lsof -Pi :$openssh -sTCP:LISTEN -t >/dev/null ; then
-	echo "Telah terdeteksi port $port sedang berjalan/aktif"
-	sleep 2
-	break
-	clear
-	echo "mohon untuk menonaktifkan/mematikan/merubah port $openssh"
-	echo "jika sudah silakan mulai install dari awal"
-elif lsof -Pi :$dropbear1 -sTCP:LISTEN -t >/dev/null ; then
-	echo "Telah terdeteksi port $port sedang berjalan/aktif"
-	sleep 2
-	break
-	clear
-	echo "mohon untuk menonaktifkan/mematikan/merubah port $dropbear1"
-	echo "jika sudah silakan mulai install dari awal"
-if lsof -Pi :$dropbear2 -sTCP:LISTEN -t >/dev/null ; then
-	echo "Telah terdeteksi port $port sedang berjalan/aktif"
-	sleep 2
-	break
-	clear
-	echo "mohon untuk menonaktifkan/mematikan/merubah port $dropbear2"
-	echo "jika sudah silakan mulai install dari awal"
-if lsof -Pi :$squid1 -sTCP:LISTEN -t >/dev/null ; then
-	echo "Telah terdeteksi port $port sedang berjalan/aktif"
-	sleep 2
-	break
-	clear
-	echo "mohon untuk menonaktifkan/mematikan/merubah port $squid1"
-	echo "jika sudah silakan mulai install dari awal"
-if lsof -Pi :$squid2 -sTCP:LISTEN -t >/dev/null ; then
-	echo "Telah terdeteksi port $port sedang berjalan/aktif"
-	sleep 2
-	break
-	clear
-	echo "mohon untuk menonaktifkan/mematikan/merubah port $squid2"
-	echo "jika sudah silakan mulai install dari awal"
-else
-    echo ""
-fi
-
-#memeriksa paket dropbear
-
-dpkg -s dropbear &> /dev/null
-
-if [ $? -eq 0 ]; then
-    echo ""
-else
-    echo "Mohon install dropbear terlebih dahulu"
-	break
-fi
 
 #update repository
 apt-get update
