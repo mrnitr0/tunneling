@@ -31,14 +31,14 @@ REGARDS
 END
 
 #set banner openssh
-cat - /etc/ssh/sshd_config <<-END
+cat > /etc/ssh/sshd_config <<-END
 Banner /etc/issue.net
 END
 
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 
