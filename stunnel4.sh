@@ -79,7 +79,7 @@ END
 service squid3 restart
 
 #install webmin
-cat - /etc/apt/sources.list <<-END
+cat > /etc/apt/sources.list <<-END
 deb http://download.webmin.com/download/repository sarge contrib
 deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
 END
