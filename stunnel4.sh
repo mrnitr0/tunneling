@@ -32,6 +32,7 @@ END
 
 #set banner openssh
 sed -i 's/#Banner/Banner/g' /etc/ssh/sshd_config
+service ssh restart
 
 #install dropbear
 apt-get -y install dropbear
