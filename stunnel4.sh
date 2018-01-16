@@ -31,9 +31,7 @@ REGARDS
 END
 
 #set banner openssh
-cat > /etc/ssh/sshd_config <<-END
-Banner /etc/issue.net
-END
+sed -i 's/#Banner/Banner/g /etc/ssh/sshd_config
 
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
