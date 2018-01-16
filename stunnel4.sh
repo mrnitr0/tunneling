@@ -35,7 +35,7 @@ sed -i 's/#Banner/Banner/g /etc/ssh/sshd_config
 
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
@@ -105,17 +105,11 @@ client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
-[squid1]
+[squid]
 accept = 8080
 connect = $ip:8000
-[squid2]
-accept = 3128
-connect = $ip:8000
-[dropbear1]
+[dropbear]
 accept = 443
-connect = $ip:143
-[dropbear2]
-accept = 80
 connect = $ip:143
 [openssh]
 accept = 444
@@ -138,8 +132,11 @@ echo "---------- Informasi --------"
 echo ""
 echo "Installer Stunnel4 Berhasil"
 echo ""
-echo "OpenSSH	: 444"
-echo "Dropbear: 80 / 443"
-echo "Squid	: 3128 / 8080"
+echo "OpenSSH	  : 22"
+echo "OpenSSH + SSL : 22"
+echo "Dropbear  : 80 / 143"
+echo "Dropbear + SSL  : 443"
+echo "Squid	  : 3128"
+echo "Squid	+ SSL : 3128"
 echo "webmin	: https://$ip:10000"
 echo "-----------------------------"
