@@ -12,7 +12,7 @@ apt-get -y install nano
 #membuat banner
 cat > /etc/issue.net <<-END
 FREE PREMIUM SSH
-PROVIDED BY GLOBALSSH[.]NET
+PROVIDED BY hh.ydragon[.]de
 
 TERMS OF SERVICE:
 -NO SHARE ACCOUNT
@@ -23,9 +23,9 @@ TERMS OF SERVICE:
 -NO PLAYSTATION SITE
 
 VISIT OUR WEB:
-CREATE SSH PREMIUM : GLOBALSSH[.]NET
+CREATE SSH PREMIUM : hh.ydragon[.]de
 DONT FORGET SUPPORT US
-DONT USE ADBLOCK WHILE VISIT GLOBALSSH[.]NET
+DONT USE ADBLOCK WHILE VISIT hh.ydragon[.]de
 
 REGARDS
 END
@@ -74,7 +74,7 @@ refresh_pattern ^ftp:           1440    20%     10080
 refresh_pattern ^gopher:        1440    0%      1440
 refresh_pattern -i (/cgi-bin/|\?) 0     0%      0
 refresh_pattern .               0       20%     4320
-visible_hostname globalssh.net
+visible_hostname hh.ydragon.de
 END
 
 service squid3 restart
@@ -95,7 +95,7 @@ state=JawaTengah
 locality=Purwokerto
 organization=GlobalSSH
 organizationalunit=Provider
-commanname=globalssh.net
+commanname=hh.ydragon[.]de
 email=admin@globalssh.net
 
 #update repository
